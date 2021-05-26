@@ -1,1 +1,1 @@
-Supplies services for interacting with the in-game map.
+Supplies services for various network-related functions.
