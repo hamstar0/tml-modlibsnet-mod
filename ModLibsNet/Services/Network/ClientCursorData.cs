@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using Terraria;
 using Terraria.ID;
 using ModLibsCore.Classes.Errors;
@@ -68,24 +67,5 @@ namespace ModLibsNet.Services.Network {
 
 			Timers.UnsetTimer( timerName );
 		}
-
-
-
-		////////////////
-
-		internal IDictionary<int, (short X, short Y)> _LastKnownCursorPositions = new Dictionary<int, (short X, short Y)>();
-
-
-
-		////////////////
-
-		void ILoadable.OnModsLoad() {
-			ClientCursorData.LastKnownCursorPositions
-				= new ReadOnlyDictionary<int, (short X, short Y)>( this._LastKnownCursorPositions );
-		}
-
-		void ILoadable.OnPostModsLoad() { }
-
-		void ILoadable.OnModsUnload() { }
 	}
 }
