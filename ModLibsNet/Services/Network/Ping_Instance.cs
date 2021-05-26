@@ -29,7 +29,7 @@ namespace ModLibsNet.Services.Net {
 				this.AveragedPing = totalSpan;
 			} else {
 				//this.CurrentPing = ( this.CurrentPing + this.CurrentPing + ping ) / 3;
-				this.AveragedPing = ( this.CurrentPing + totalSpan ) / 2;
+				this.AveragedPing = ( this.AveragedPing + totalSpan ) / 2;
 			}
 
 			this.CurrentPing = totalSpan;
