@@ -6,7 +6,7 @@ using Terraria.ModLoader.Config;
 
 namespace ModLibsNet {
 	/// <summary>
-	/// Defines Mod Helpers config settings.
+	/// Defines config settings.
 	/// </summary>
 	[Label( "Mod Libs - Services - Net - Settings" )]
 	public class ModLibsNetConfig : ModConfig {

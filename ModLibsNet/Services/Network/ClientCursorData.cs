@@ -34,7 +34,7 @@ namespace ModLibsNet.Services.Network {
 				throw new ModLibsException( "Not a client." );
 			}
 
-//LogHelpers.LogOnce( "UUU StartBroadcastingMyCursorPosition - "+string.Join("\n  ", DebugHelpers.GetContextSlice()) );
+//LogLibraries.LogOnce( "UUU StartBroadcastingMyCursorPosition - "+string.Join("\n  ", DebugLibraries.GetContextSlice()) );
 			string timerName = "cursor_broadcast_" + Main.myPlayer;
 			if( Timers.GetTimerTickDuration(timerName) > 0 ) {
 				return false;

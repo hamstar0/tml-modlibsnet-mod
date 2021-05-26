@@ -86,7 +86,7 @@ namespace ModLibsNet.Services.Net {
 			};
 
 			WebConnectionLibraries.MakeGetRequestAsync( "http://checkip.dyndns.org/", e => onFail(e, ""), onCompletion );
-			//NetHelpers.MakeGetRequestAsync( "https://api.ipify.org/", onSuccess, onFail );
+			//NetLibraries.MakeGetRequestAsync( "https://api.ipify.org/", onSuccess, onFail );
 			//using( WebClient webClient = new WebClient() ) {
 			//	this.PublicIP = webClient.DownloadString( "http://ifconfig.me/ip" );
 			//}
