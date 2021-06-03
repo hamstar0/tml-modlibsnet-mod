@@ -1,6 +1,5 @@
 ﻿using System;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Classes.Errors;
 using ModLibsCore.Libraries.Debug;
@@ -8,7 +7,7 @@ using ModLibsCore.Libraries.Debug;
 
 namespace ModLibsNet.Services.Net {
 	/// <summary>
-	/// Assorted static "helper" functions pertaining to network play.
+	/// Assorted static library functions pertaining to network play.
 	/// </summary>
 	public partial class PublicIP {
 		/// <summary>

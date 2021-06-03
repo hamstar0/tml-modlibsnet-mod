@@ -9,7 +9,9 @@ using ModLibsCore.Services.Timers;
 
 
 namespace ModLibsNet.Services.Net {
-	/// @private
+	/// <summary>
+	/// Assorted static library functions pertaining to network play.
+	/// </summary>
 	public partial class PublicIP : ILoadable {
 		private string IP = null;
 
@@ -17,7 +19,9 @@ namespace ModLibsNet.Services.Net {
 
 		////////////////
 
-		internal PublicIP() {
+		void ILoadable.OnModsLoad() { }
+
+		void ILoadable.OnPostModsLoad() {
 			if( ModLibsNetConfig.Instance.DisableOwnIPCheck ) {
 				return;
 			}
@@ -26,8 +30,8 @@ namespace ModLibsNet.Services.Net {
 
 			int attempts = 3;
 
-			Timers.SetTimer( 60 * 20, true, delegate () {	// 20 seconds, 3 attempts
-				if( this.IP != null ) {	// Already acquired?
+			Timers.SetTimer( 60 * 20, true, delegate () {   // 20 seconds, 3 attempts
+				if( this.IP != null ) { // Already acquired?
 					return false;
 				}
 
@@ -35,10 +39,6 @@ namespace ModLibsNet.Services.Net {
 				return attempts-- > 0;
 			} );
 		}
-
-		void ILoadable.OnModsLoad() { }
-
-		void ILoadable.OnPostModsLoad() { }
 
 		void ILoadable.OnModsUnload() { }
 
@@ -84,7 +84,7 @@ namespace ModLibsNet.Services.Net {
 					LogLibraries.Alert( "Could not acquire IP: " + e.ToString() );
 				}
 			};
-
+			
 			WebConnectionLibraries.MakeGetRequestAsync( "http://checkip.dyndns.org/", e => onFail(e, ""), onCompletion );
 			//NetLibraries.MakeGetRequestAsync( "https://api.ipify.org/", onSuccess, onFail );
 			//using( WebClient webClient = new WebClient() ) {

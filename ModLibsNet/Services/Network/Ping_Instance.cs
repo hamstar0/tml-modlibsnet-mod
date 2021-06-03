@@ -6,7 +6,9 @@ using ModLibsCore.Libraries.Debug;
 
 
 namespace ModLibsNet.Services.Net {
-	/// @private
+	/// <summary>
+	/// Assorted static library functions pertaining to network play.
+	/// </summary>
 	public partial class Ping : ILoadable {
 		private int AveragedPing = -1;
 		private int CurrentPing = -1;
