@@ -9,7 +9,6 @@ using ModLibsNet.Services.Network;
 
 namespace ModLibsNet.Internals.NetPackets {
 	/// @private
-	[Serializable]
 	[IsNoisy]
 	class CursorPositionPacket : SimplePacketPayload {
 		internal static bool BroadcastCursorIf() {
@@ -25,8 +24,8 @@ namespace ModLibsNet.Internals.NetPackets {
 				}
 			}
 
-			var protocol = new CursorPositionPacket( (byte)Main.myPlayer, (short)Main.mouseX, (short)Main.mouseY );
-			SimplePacket.SendToClient( protocol );
+			var packet = new CursorPositionPacket( (byte)Main.myPlayer, (short)Main.mouseX, (short)Main.mouseY );
+			SimplePacket.SendToServer( packet );
 
 			return true;
 		}
