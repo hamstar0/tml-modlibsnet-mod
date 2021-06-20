@@ -32,10 +32,6 @@ namespace ModLibsNet.Internals.NetPackets {
 		////////////////
 
 		public override void ReceiveOnServer( int fromWho ) {
-			if( this.RoundTripTime == -1 ) {
-				throw new ModLibsException( "Improper ping gauging." );
-			}
-
 			this.ServerBounceTime = (long)SystemLibraries.TimeStamp().TotalMilliseconds;
 
 			SimplePacket.SendToClient( this, fromWho, -1 );
@@ -43,6 +39,10 @@ namespace ModLibsNet.Internals.NetPackets {
 
 
 		public override void ReceiveOnClient() {
+			if( this.ServerBounceTime == -1 ) {
+				throw new ModLibsException( "Improper ping gauging." );
+			}
+
 			this.RoundTripTime = (long)SystemLibraries.TimeStamp().TotalMilliseconds;
 
 			if( this.ServerBounceTime == -1 ) {
