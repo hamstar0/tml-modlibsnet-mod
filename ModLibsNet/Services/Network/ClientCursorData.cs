@@ -41,6 +41,10 @@ namespace ModLibsNet.Services.Network {
 			}
 
 			Timers.SetTimer( timerName, 15, false, () => {
+				if( Main.netMode != NetmodeID.MultiplayerClient ) {
+					return false;	// i guess if client DCs?
+				}
+
 				bool canBroadcast = Main.player[Main.myPlayer].active
 					&& LoadLibraries.IsWorldBeingPlayed();
 
