@@ -2,26 +2,23 @@
 using System.Net;
 using Terraria;
 using ModLibsCore.Classes.Errors;
-using ModLibsCore.Classes.Loadable;
 using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Libraries.Net;
 using ModLibsCore.Services.Timers;
-
+using Terraria.ModLoader;
 
 namespace ModLibsNet.Services.Net {
 	/// <summary>
 	/// Assorted static library functions pertaining to network play.
 	/// </summary>
-	public partial class PublicIP : ILoadable {
+	public partial class PublicIP : ModSystem {
 		private string IP = null;
 
 
 
 		////////////////
 
-		void ILoadable.OnModsLoad() { }
-
-		void ILoadable.OnPostModsLoad() {
+		public override void PostSetupContent() {
 			if( ModLibsNetConfig.Instance.DisableOwnIPCheck ) {
 				return;
 			}
@@ -39,8 +36,6 @@ namespace ModLibsNet.Services.Net {
 				return attempts-- > 0;
 			} );
 		}
-
-		void ILoadable.OnModsUnload() { }
 
 
 		////////////////

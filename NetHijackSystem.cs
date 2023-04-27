@@ -13,7 +13,7 @@ using ModLibsNet.Services.Network.Scraper;
 
 namespace ModLibsNet {
 	/// @private
-	partial class ModLibsNetMod : Mod {
+	partial class NetHijackSystem : ModSystem {
 		public override bool HijackSendData(
 					int whoAmI,
 					int msgType,

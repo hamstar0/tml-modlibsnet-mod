@@ -14,7 +14,7 @@ namespace ModLibsNet.Internals.Logic {
 		////////////////
 
 		public override void PreUpdate() {
-			if( this.player.whoAmI == Main.myPlayer ) { // Current player
+			if( this.Player.whoAmI == Main.myPlayer ) { // Current player
 				this.PreUpdateLocal();
 			}
 		}

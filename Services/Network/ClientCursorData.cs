@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using ModLibsCore.Classes.Errors;
-using ModLibsCore.Classes.Loadable;
 using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Libraries.TModLoader;
 using ModLibsCore.Services.Timers;
 using ModLibsNet.Internals.NetPackets;
-
+using Terraria.ModLoader;
 
 namespace ModLibsNet.Services.Network {
 	/// <summary>
 	/// Supplies assorted server informations and tools.
 	/// </summary>
-	public partial class ClientCursorData : ILoadable {
+	public partial class ClientCursorData : ModSystem {
 		/// <summary>
 		/// Shows last known positions of each player's mouse cursor. Must be activated via. StartBroadcastingMyCursorPosition(),
 		/// first.

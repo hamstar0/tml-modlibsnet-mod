@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Terraria.ModLoader;
-using ModLibsCore.Classes.Loadable;
-
 
 namespace ModLibsNet.Services.Network.Scraper {
 	/// <summary>
@@ -10,7 +8,7 @@ namespace ModLibsNet.Services.Network.Scraper {
 	/// 
 	/// Note: As of yet, outgoing byte data is not yet captured; only `NetMessage.SendData(...)` parameter values.
 	/// </summary>
-	public partial class Scraper : ILoadable {
+	public partial class Scraper : ModSystem {
 		internal static void AddSentData( ScrapedSentData data ) {
 			var scraper = ModContent.GetInstance<Scraper>();
 
@@ -44,15 +42,5 @@ namespace ModLibsNet.Services.Network.Scraper {
 		private List<Action<ScrapedSentData>> OnSent { get; } = new List<Action<ScrapedSentData>>();
 
 		private List<Action<ScrapedReceivedData>> OnReceived { get; } = new List<Action<ScrapedReceivedData>>();
-
-
-
-		////////////////
-
-		void ILoadable.OnModsLoad() { }
-
-		void ILoadable.OnModsUnload() { }
-
-		void ILoadable.OnPostModsLoad() { }
 	}
 }
