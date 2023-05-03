@@ -9,7 +9,7 @@ using ModLibsNet.Services.Network;
 
 namespace ModLibsNet.Internals.NetPackets {
 	/// @private
-	[IsNoisy]
+	[Serializable, IsNoisy]
 	class CursorPositionPacket : SimplePacketPayload {
 		internal static bool BroadcastCursorIf() {
 			if( Main.netMode != NetmodeID.MultiplayerClient ) {

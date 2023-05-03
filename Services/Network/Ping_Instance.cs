@@ -1,27 +1,16 @@
 ﻿using System;
 using Terraria;
 using ModLibsCore.Classes.Errors;
-using ModLibsCore.Classes.Loadable;
 using ModLibsCore.Libraries.Debug;
-
+using Terraria.ModLoader;
 
 namespace ModLibsNet.Services.Net {
 	/// <summary>
 	/// Assorted static library functions pertaining to network play.
 	/// </summary>
-	public partial class Ping : ILoadable {
+	public partial class Ping : ModSystem {
 		private int AveragedPing = -1;
 		private int CurrentPing = -1;
-
-
-
-		////////////////
-
-		void ILoadable.OnModsLoad() { }
-
-		void ILoadable.OnPostModsLoad() { }
-
-		void ILoadable.OnModsUnload() { }
 
 
 		////////////////

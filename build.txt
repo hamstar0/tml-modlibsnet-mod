@@ -1,6 +1,6 @@
 displayName = Mod Libs - Services - Network
 author = hamstar
 version = 1.0.3
-modReferences = ModLibsCore@1.0.0
+modReferences = ModLibsCore@2.0.0
 buildIgnore = *.csproj, *.user, *.bat, obj\*, bin\*, .vs\*, .git\*
 homepage = https://forums.terraria.org/index.php?threads/mod-libs.111593/

@@ -7,6 +7,7 @@ using ModLibsNet.Services.Net;
 
 
 namespace ModLibsNet.Internals.NetPackets {
+	[Serializable]
 	class PingFromClientRoundTripPacket : SimplePacketPayload {
 		public static void QuickSendToServer() {
 			SimplePacket.SendToServer( new PingFromClientRoundTripPacket() );

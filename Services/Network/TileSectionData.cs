@@ -2,15 +2,14 @@
 using System.IO;
 using Terraria;
 using ModLibsCore.Classes.Errors;
-using ModLibsCore.Classes.Loadable;
 using ModLibsCore.Libraries.TModLoader;
-
+using Terraria.ModLoader;
 
 namespace ModLibsNet.Services.Network {
 	/// <summary>
 	/// Supplies tile section data network services (primarily client getter).
 	/// </summary>
-	public partial class TileSectionData : ILoadable {
+	public partial class TileSectionData : ModSystem {
 		/// <summary>
 		/// </summary>
 		/// <param name="tileX"></param>
